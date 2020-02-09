@@ -1,0 +1,67 @@
+@import "setup";
+
+
+// stripping default styles
+h1,
+h2,
+h3,
+h4,
+ul,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+// general styles
+// html {
+//     font-size: 62.5%;
+// }
+.wrapper {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+li {
+    // list-style: none;
+    list-style-position: inside;
+}
+h1,
+input[type=submit],
+h2 {
+    text-transform: uppercase;
+}
+
+// header layout 
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4vh;
+}
+h1,
+input[type=submit] {
+    margin-top: 2vh;
+}
+label {
+    margin-bottom: 1vh;
+    margin-top: 2vh;
+}
+
+// table layout
+h2 {
+    text-align: center;
+}
+table {
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+.tableWeekday {
+    width: 15%;
+}
+.weekdayItem {
+    width: 85%;
+}
+
