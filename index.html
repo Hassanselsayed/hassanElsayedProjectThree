@@ -17,7 +17,8 @@
             <h1>To do list</h1>
             <label for="Weekday">Please choose a weekday</label>
             <select name="Weekday" id="Weekday">
-                <option value="monday" selected>Monday</option>
+                <option disabled selected>Weekday</option>
+                <option value="monday">Monday</option>
                 <option value="tuesday">Tuesday </option>
                 <option value="wednesday">Wednesday</option>
                 <option value="thursday">Thursday</option>
@@ -26,7 +27,7 @@
                 <option value="sunday">Sunday</option>
             </select>
             <label for="toDoItem">Please enter a to do item</label>
-            <input type="text" placeholder="Please input to do item" id="toDoItem">
+            <input type="text" placeholder="Please input to do item" id="toDoItem" autocomplete="off">
             
             <input type="submit" value="add to list!">
         </form>
@@ -38,7 +39,7 @@
             <tr>
                 <td class="tableWeekday">Monday</td>
                 <td class="weekdayItem">
-                    <ul>
+                    <ul id="monday">
                         <!-- Monday to do tasks will be dynamically added here -->
                     </ul>
                 </td>
@@ -46,7 +47,7 @@
             <tr>
                 <td class="tableWeekday">Tuesday</td>
                 <td class="weekdayItem">
-                    <ul>
+                    <ul id="tuesday">
                         <!-- Tuesday to do tasks will be dynamically added here -->
                     </ul>
                 </td>
@@ -54,7 +55,7 @@
             <tr>
                 <td class="tableWeekday">Wednesday</td>
                 <td class="weekdayItem">
-                    <ul>
+                    <ul id="wednesday">
                         <!-- Wednesday to do tasks will be dynamically added here -->
                     </ul>
                 </td>
@@ -62,7 +63,7 @@
             <tr>
                 <td class="tableWeekday">Thursday</td>
                 <td class="weekdayItem">
-                    <ul>
+                    <ul id="thursday">
                         <!-- Thursday to do tasks will be dynamically added here -->
                     </ul>
                 </td>
@@ -70,7 +71,7 @@
             <tr>
                 <td class="tableWeekday">Friday</td>
                 <td class="weekdayItem">
-                    <ul>
+                    <ul id="friday">
                         <!-- Friday to do tasks will be dynamically added here -->
                     </ul>
                 </td>
@@ -78,7 +79,7 @@
             <tr>
                 <td class="tableWeekday">Saturday</td>
                 <td class="weekdayItem">
-                    <ul>
+                    <ul id="saturday">
                         <!-- Saturday to do tasks will be dynamically added here -->
                     </ul>
                 </td>
@@ -86,7 +87,7 @@
             <tr>
                 <td class="tableWeekday">Sunday</td>
                 <td class="weekdayItem">
-                    <ul>
+                    <ul id="sunday">
                         <!-- Sunday to do tasks will be dynamically added here -->
                     </ul>
                 </td>

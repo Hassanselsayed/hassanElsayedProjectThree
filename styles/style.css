@@ -211,6 +211,11 @@ template {
   height: 0;
 }
 
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
@@ -247,13 +252,18 @@ p {
 }
 
 li {
-  list-style-position: inside;
+  list-style: none;
 }
 
 h1,
 input[type=submit],
 h2 {
   text-transform: uppercase;
+}
+
+.checkboxButton {
+  background: none;
+  border: none;
 }
 
 form {

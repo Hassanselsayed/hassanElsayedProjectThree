@@ -1,21 +1,50 @@
 $(document).ready(function () {
-    $('form').on('submit', function (e) {
-        e.preventDefault();
 
-        if ($('input').val() !== '') {
-            let toDoItem = $('input').val();
-            $('ul').append("<li> <span class='fa fa-square-o'></span> " + toDoItem + "</li>");
-            $('input[type=text]').val(''); // clear input
-        };
 
+    let $selectedWeekday;
+    
+    $("select").change(function () {
+        $selectedWeekday = $(this).children("option:selected").val();
+        console.log($selectedWeekday);
+        
+        
+        $('form').on('submit', function(e) {
+            e.preventDefault();
+            const $toDoItem = $('input[type=text]').val().trim();
+            
+            if ($toDoItem !== '') {
+                $('#' +$selectedWeekday).append(`
+                <li>
+                    <button class="checkboxButton">
+                        <i aria-hidden="true" class='fa fa-square-o'></i>
+                        <span class="sr-only">item checkbox</span>
+                    </button>
+                    ${$toDoItem}
+                    <button id="remove" title="remove the item from list">x</button>
+                </li>`);
+                $('input[type=text]').val(''); 
+            };
+        });
     });
+    
 
-    $('ul').on('click', 'li', function () {
-        let checkBox = $(this).find('.fa');
-        checkBox.toggleClass("fa-square-o fa-check-square-o");
+    checkboxListener = function () {
+        let $checkBox = $(this).find('.fa');
+        $checkBox.toggleClass("fa-square-o fa-check-square-o");
         $(this).toggleClass("text-muted")
-    });
+    };
+
+    removeItemListener = function () {
+        const $removeElement = $(this).parent('li');
+        $removeElement.remove();
+    };
+
+
+    $('ul').on('click', 'li', checkboxListener);
+    $('ul').on('click', '#remove', removeItemListener);
 });
+
+
 
 
 // $(function () {

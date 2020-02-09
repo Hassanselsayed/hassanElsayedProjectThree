@@ -22,13 +22,16 @@ p {
     margin: 0 auto;
 }
 li {
-    // list-style: none;
-    list-style-position: inside;
+    list-style: none;
 }
 h1,
 input[type=submit],
 h2 {
     text-transform: uppercase;
+}
+.checkboxButton {
+    background: none;
+    border: none;
 }
 
 // header layout 
