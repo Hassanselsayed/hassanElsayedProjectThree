@@ -5,7 +5,6 @@ $(document).ready(function () {
     
     $("select").change(function () {
         $selectedWeekday = $(this).children("option:selected").val();
-        console.log($selectedWeekday);
         
         
         $('form').on('submit', function(e) {
@@ -19,8 +18,8 @@ $(document).ready(function () {
                         <i aria-hidden="true" class='fa fa-square-o'></i>
                         <span class="sr-only">item checkbox</span>
                     </button>
-                    ${$toDoItem}
-                    <button id="remove" title="remove the item from list">x</button>
+                    <p>${$toDoItem}</p>
+                    <button id="remove" class="removeItem" title="remove the item from list">x</button>
                 </li>`);
                 $('input[type=text]').val(''); 
             };
@@ -31,7 +30,7 @@ $(document).ready(function () {
     checkboxListener = function () {
         let $checkBox = $(this).find('.fa');
         $checkBox.toggleClass("fa-square-o fa-check-square-o");
-        $(this).toggleClass("text-muted")
+        $(this).children('p, .checkboxButton').toggleClass("scratchItemOff")
     };
 
     removeItemListener = function () {

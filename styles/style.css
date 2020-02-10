@@ -253,6 +253,7 @@ p {
 
 li {
   list-style: none;
+  word-break: break-all;
 }
 
 h1,
@@ -266,6 +267,47 @@ h2 {
   border: none;
 }
 
+.removeItem {
+  background-color: #64B6AC;
+  margin: 5px;
+}
+
+input[type=submit] {
+  background-color: #FCF0CC;
+}
+
+input[type=submit],
+input[type=text],
+select {
+  padding: 5px 15px;
+}
+
+input[type=submit],
+.removeItem {
+  border: none;
+}
+
+select:hover,
+input[type=submit]:hover,
+button:hover,
+li p:hover {
+  cursor: pointer;
+}
+
+input[type=text] {
+  width: 50%;
+}
+
+.scratchItemOff {
+  text-decoration: line-through;
+  color: #5D737E;
+}
+
+header {
+  background-color: #2E9BFF;
+  min-height: 40vh;
+}
+
 form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -277,12 +319,12 @@ form {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 4vh;
+  padding-bottom: 4vh;
 }
 
 h1,
 input[type=submit] {
-  margin-top: 2vh;
+  margin-top: 3vh;
 }
 
 label {
@@ -290,8 +332,15 @@ label {
   margin-top: 2vh;
 }
 
+main {
+  background-color: #a300ff;
+  padding: 5vh;
+  min-height: 60vh;
+}
+
 h2 {
   text-align: center;
+  padding-bottom: 2vh;
 }
 
 table {
@@ -304,8 +353,62 @@ table, th, td {
 
 .tableWeekday {
   width: 15%;
+  padding: 5px 10px;
 }
 
 .weekdayItem {
   width: 85%;
+  padding: 5px 0;
+}
+
+li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkboxButton,
+.removeItem {
+  -ms-flex-preferred-size: calc(2.5% - (5px));
+      flex-basis: calc(2.5% - (5px));
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+li p {
+  -ms-flex-preferred-size: calc(95% - 10px);
+      flex-basis: calc(95% - 10px);
+  margin-right: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+@media (max-width: 800px) {
+  input[type=text] {
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  tr {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .weekdayItem {
+    width: 100%;
+    margin: 5px 0;
+    min-height: 30px;
+  }
+  .tableWeekday {
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+  }
 }
