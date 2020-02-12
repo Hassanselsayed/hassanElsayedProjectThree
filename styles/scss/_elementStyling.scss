@@ -1,0 +1,59 @@
+// stripping default styles
+h1,
+h2,
+h3,
+h4,
+ul,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+// general styles
+html {
+    font-size: 125%;
+}
+.wrapper {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+// styling specific elements
+body,
+input[type=submit],
+select,
+input[type=text] {
+    font-family: 'Lato', sans-serif;
+}
+h1,
+h2 {
+    font-family: 'Playfair Display', serif;
+}
+h1,
+h2,
+input[type=submit] {
+    text-transform: uppercase;
+}
+input[type=submit],
+.removeItem {
+    border: none;
+    background-color: rgb(252, 240, 204);
+}
+select:hover,
+input[type=submit]:hover,
+button:hover,
+li p:hover {
+    cursor: pointer;
+}
+table, th, td {
+    border: 2px solid rgba(0, 0, 0, 1);
+}
+.checkboxButton {
+    background: none;
+    border: none;
+}
+.scratchItemOff {
+    text-decoration: line-through;
+    color: rgb(93, 115, 126);
+}

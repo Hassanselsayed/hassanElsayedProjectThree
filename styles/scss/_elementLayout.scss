@@ -1,0 +1,78 @@
+$mainBackground: rgb(163, 0, 255);
+
+
+// header layout 
+header {
+    background-color: rgb(46, 155, 255);
+    min-height: 40vh;
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 4vh;
+        h1,
+        input[type=submit] {
+            margin-top: 3vh;
+        }
+        input[type=submit],
+        input[type=text],
+        select {
+            padding: 5px 15px;
+        }
+        label {
+            margin-bottom: 1vh;
+            margin-top: 2vh;
+        }
+        input[type=text] {
+            width: 50%;
+        }
+    }
+}
+
+// main section layout
+main {
+    background-color: lighten($color: $mainBackground, $amount: 30);
+    padding: 5vh;
+    min-height: 60vh;
+    h2 {
+        text-align: center;
+        padding-bottom: 2vh;
+    }
+    table {
+        width: 100%;
+        background-color: lighten($color: $mainBackground, $amount: 10);
+        tr {
+            .tableWeekday {
+                width: 15%;
+                padding: 5px 10px;
+                font-weight: bold;
+                text-align: center;
+            }
+        }
+    }
+}
+.weekdayItem {
+    width: 85%;
+    padding: 5px 0;
+    ul {
+        li {
+            list-style: none;
+            word-break: break-all;
+            display: flex;
+            align-items: center;
+            .checkboxButton,
+            .removeItem {
+                flex-basis: calc(2.5% - (5px));
+                flex-shrink: 0;
+            }
+            p {
+                flex-basis: calc(95% - 10px);
+                margin-right: 10px;
+                flex-grow: 1;
+            }
+            .removeItem {
+                margin: 5px;
+            }
+        }
+    }
+}

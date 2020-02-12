@@ -245,46 +245,38 @@ p {
   padding: 0;
 }
 
+html {
+  font-size: 125%;
+}
+
 .wrapper {
   width: 90%;
   max-width: 1280px;
   margin: 0 auto;
 }
 
-li {
-  list-style: none;
-  word-break: break-all;
+body,
+input[type=submit],
+select,
+input[type=text] {
+  font-family: 'Lato', sans-serif;
 }
 
 h1,
-input[type=submit],
 h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+h1,
+h2,
+input[type=submit] {
   text-transform: uppercase;
 }
 
-.checkboxButton {
-  background: none;
-  border: none;
-}
-
-.removeItem {
-  background-color: #c179b9;
-  margin: 5px;
-}
-
-input[type=submit] {
-  background-color: #FCF0CC;
-}
-
-input[type=submit],
-input[type=text],
-select {
-  padding: 5px 15px;
-}
-
 input[type=submit],
 .removeItem {
   border: none;
+  background-color: #fcf0cc;
 }
 
 select:hover,
@@ -294,21 +286,26 @@ li p:hover {
   cursor: pointer;
 }
 
-input[type=text] {
-  width: 50%;
+table, th, td {
+  border: 2px solid black;
+}
+
+.checkboxButton {
+  background: none;
+  border: none;
 }
 
 .scratchItemOff {
   text-decoration: line-through;
-  color: #5D737E;
+  color: #5d737e;
 }
 
 header {
-  background-color: #2E9BFF;
+  background-color: #2e9bff;
   min-height: 40vh;
 }
 
-form {
+header form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -322,38 +319,47 @@ form {
   padding-bottom: 4vh;
 }
 
-h1,
-input[type=submit] {
+header form h1,
+header form input[type=submit] {
   margin-top: 3vh;
 }
 
-label {
+header form input[type=submit],
+header form input[type=text],
+header form select {
+  padding: 5px 15px;
+}
+
+header form label {
   margin-bottom: 1vh;
   margin-top: 2vh;
 }
 
+header form input[type=text] {
+  width: 50%;
+}
+
 main {
-  background-color: #a300ff;
+  background-color: #da99ff;
   padding: 5vh;
   min-height: 60vh;
 }
 
-h2 {
+main h2 {
   text-align: center;
   padding-bottom: 2vh;
 }
 
-table {
+main table {
   width: 100%;
+  background-color: #b533ff;
 }
 
-table, th, td {
-  border: 2px solid black;
-}
-
-.tableWeekday {
+main table tr .tableWeekday {
   width: 15%;
   padding: 5px 10px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .weekdayItem {
@@ -361,7 +367,9 @@ table, th, td {
   padding: 5px 0;
 }
 
-li {
+.weekdayItem ul li {
+  list-style: none;
+  word-break: break-all;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -370,15 +378,15 @@ li {
           align-items: center;
 }
 
-.checkboxButton,
-.removeItem {
+.weekdayItem ul li .checkboxButton,
+.weekdayItem ul li .removeItem {
   -ms-flex-preferred-size: calc(2.5% - (5px));
       flex-basis: calc(2.5% - (5px));
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
 
-li p {
+.weekdayItem ul li p {
   -ms-flex-preferred-size: calc(95% - 10px);
       flex-basis: calc(95% - 10px);
   margin-right: 10px;
@@ -387,29 +395,31 @@ li p {
           flex-grow: 1;
 }
 
+.weekdayItem ul li .removeItem {
+  margin: 5px;
+}
+
 @media (max-width: 800px) {
-  input[type=text] {
+  header form input[type=text] {
     width: 80%;
   }
 }
 
 @media (max-width: 500px) {
-  tr {
+  main table tr {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
+  main table tr .tableWeekday {
+    width: 50%;
+    margin: 0 auto;
+  }
   .weekdayItem {
     width: 100%;
     margin: 5px 0;
-    min-height: 41.6px;
-  }
-  .tableWeekday {
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
-    height: 80%;
+    min-height: 45px;
   }
 }
