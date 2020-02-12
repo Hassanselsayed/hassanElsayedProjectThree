@@ -402,6 +402,7 @@ main table tr .tableWeekday {
 @media (max-width: 800px) {
   header form input[type=text] {
     width: 80%;
+    font-size: 0.75rem;
   }
 }
 
