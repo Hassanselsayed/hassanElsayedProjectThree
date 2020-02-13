@@ -4,14 +4,13 @@ $mainBackground: rgb(163, 0, 255);
 // header layout 
 header {
     background-color: rgb(46, 155, 255);
-    height: 40vh;
+    min-height: 40vh;
     position: sticky;
     top: 0;
     form {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-bottom: 4vh;
         h1,
         input[type=submit] {
             margin-top: 3vh;
@@ -35,7 +34,7 @@ header {
 main {
     background-color: lighten($color: $mainBackground, $amount: 30);
     padding: 5vh;
-    min-height: 60vh;
+    min-height: 55vh;
     h2 {
         text-align: center;
         padding-bottom: 2vh;
@@ -81,7 +80,15 @@ main {
         }
     }
 }
+footer {
+    background-color: rgb(252, 240, 204);
+    min-height: 5vh;
+    padding: 5px 0;
+    text-align: center;
+    p {
 
+    }
+}
 // media queries
 @media (max-width: 800px) {
     header {
