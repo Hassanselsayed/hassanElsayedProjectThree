@@ -237,8 +237,6 @@ html {
 
 h1,
 h2,
-h3,
-h4,
 ul,
 p {
   margin: 0;
@@ -274,15 +272,21 @@ input[type=submit] {
 }
 
 input[type=submit],
-.removeItem {
-  border: none;
+.removeItem,
+.addSubtask {
   background-color: #fcf0cc;
+}
+
+input[type=submit],
+.removeItem,
+.addSubtask,
+.checkboxButton {
+  border: none;
 }
 
 select:hover,
 input[type=submit]:hover,
-button:hover,
-li p:hover {
+button:hover {
   cursor: pointer;
 }
 
@@ -292,7 +296,6 @@ table, th, td {
 
 .checkboxButton {
   background: none;
-  border: none;
 }
 
 .scratchItemOff {
@@ -302,7 +305,10 @@ table, th, td {
 
 header {
   background-color: #2e9bff;
-  min-height: 40vh;
+  height: 40vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 header form {
@@ -367,6 +373,10 @@ main table tr .tableWeekday {
   padding: 5px 0;
 }
 
+.weekdayItem ul li:nth-child(odd) {
+  background-color: #da99ff;
+}
+
 .weekdayItem ul li {
   list-style: none;
   word-break: break-all;
@@ -380,15 +390,15 @@ main table tr .tableWeekday {
 
 .weekdayItem ul li .checkboxButton,
 .weekdayItem ul li .removeItem {
-  -ms-flex-preferred-size: calc(2.5% - (5px));
-      flex-basis: calc(2.5% - (5px));
+  -ms-flex-preferred-size: calc(2.5% - (4px));
+      flex-basis: calc(2.5% - (4px));
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
 
 .weekdayItem ul li p {
-  -ms-flex-preferred-size: calc(95% - 10px);
-      flex-basis: calc(95% - 10px);
+  -ms-flex-preferred-size: calc(92.5% - 10px);
+      flex-basis: calc(92.5% - 10px);
   margin-right: 10px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -396,13 +406,19 @@ main table tr .tableWeekday {
 }
 
 .weekdayItem ul li .removeItem {
-  margin: 5px;
+  margin: 3px;
 }
 
 @media (max-width: 800px) {
   header form input[type=text] {
     width: 80%;
     font-size: 0.75rem;
+  }
+}
+
+@media (max-height: 500px) {
+  header {
+    position: static;
   }
 }
 
@@ -415,7 +431,7 @@ main table tr .tableWeekday {
         flex-wrap: wrap;
   }
   main table tr .tableWeekday {
-    width: 50%;
+    width: 65%;
     margin: 0 auto;
   }
   .weekdayItem {

@@ -1,75 +1,50 @@
+// document ready
 $(document).ready(function () {
 
-
     let $selectedWeekday;
-    
+    // listening for dropdown menu choice
     $("select").change(function () {
         $selectedWeekday = $(this).children("option:selected").val();
         
-        
+        // listening for form submission
         $('form').on('submit', function(e) {
             e.preventDefault();
             const $toDoItem = $('input[type=text]').val().trim();
             
+            // validating that the user types before they submit
             if ($toDoItem !== '') {
                 $('#' +$selectedWeekday).append(`
                 <li>
-                    <button class="checkboxButton">
+                    <button id="checkboxButton" class="checkboxButton">
                         <i aria-hidden="true" class='fa fa-square-o'></i>
                         <span class="sr-only">item checkbox</span>
                     </button>
                     <p>${$toDoItem}</p>
-                    <button id="remove" class="removeItem" title="remove the item from list">x</button>
+                    </button>
+                    <button id="remove" class="removeItem" title="remove item from the list">
+                    x
+                    <span class="sr-only">remove item from the list</span>
+                    </button>
                 </li>`);
-                $('input[type=text]').val(''); 
+                // emptying the input field after submission
+                $('input[type=text]').val('');
+                // returning focus to the input after submission
+                $('input[type=text]').focus();
             };
         });
     });
     
+    // listening for checkbox click
+    $('ul').on('click', '#checkboxButton', function() {
+        const $checkBox = $(this);
+        $checkBox.children('.fa').toggleClass("fa-square-o fa-check-square-o");
+        $checkBox.toggleClass("scratchItemOff");
+        $checkBox.siblings('p').toggleClass("scratchItemOff");
+    });
 
-    checkboxListener = function () {
-        let $checkBox = $(this).find('.fa');
-        $checkBox.toggleClass("fa-square-o fa-check-square-o");
-        $(this).children('p, .checkboxButton').toggleClass("scratchItemOff")
-    };
-
-    removeItemListener = function () {
-        const $removeElement = $(this).parent('li');
-        $removeElement.remove();
-    };
-
-
-    $('ul').on('click', 'li', checkboxListener);
-    $('ul').on('click', '#remove', removeItemListener);
+    // listening for remove button click
+    $('ul').on('click', '#remove', function() {
+        $(this).parent().remove();
+    });
+    
 });
-
-
-
-
-// $(function () {
-
-//     // Use jQuery to select the a tags in the document
-//     // add a click event handler and prevent the default action of the link (e.preventDefault)
-//     $('a.contactLink').on('click', function (e) {
-
-//         e.preventDefault();
-//         // Find a jQuery method that gets the text inside of the clicked element.
-//         // Save the text in a variable for use later
-//         const name = $(this).text();
-
-//         // Find a jQuery method that will get the contents of the data attributes on the clicked element
-//         // Store each value in it's own variable
-//         const email = $(this).data('email');
-//         const website = $(this).data('website');
-
-//         // Create a variable that holds the string:
-//         // <a href="**website**">**name**</a>'s email is <a href="mailto:**email**">**email**</a>'
-//         const text = `<a href="${website}">${name}</a> can be reached at <a href="mailto:${email}">${email}</a>`;
-
-//         // Select the h2.showInfo element and insert the text variable inside
-//         // Be sure to find a method that will allow you to insert HTML
-//         $('h2.showInfo').html(text);
-
-//     });
-
-// });

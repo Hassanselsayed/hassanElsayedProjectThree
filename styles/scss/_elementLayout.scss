@@ -1,10 +1,12 @@
+// main section background variable
 $mainBackground: rgb(163, 0, 255);
-
 
 // header layout 
 header {
     background-color: rgb(46, 155, 255);
-    min-height: 40vh;
+    height: 40vh;
+    position: sticky;
+    top: 0;
     form {
         display: flex;
         flex-direction: column;
@@ -55,6 +57,9 @@ main {
     width: 85%;
     padding: 5px 0;
     ul {
+        li:nth-child(odd) {
+            background-color: lighten($color: $mainBackground, $amount: 30);
+        }
         li {
             list-style: none;
             word-break: break-all;
@@ -62,21 +67,22 @@ main {
             align-items: center;
             .checkboxButton,
             .removeItem {
-                flex-basis: calc(2.5% - (5px));
+                flex-basis: calc(2.5% - (4px));
                 flex-shrink: 0;
             }
             p {
-                flex-basis: calc(95% - 10px);
+                flex-basis: calc(92.5% - 10px);
                 margin-right: 10px;
                 flex-grow: 1;
             }
             .removeItem {
-                margin: 5px;
+                margin: 3px;
             }
         }
     }
 }
 
+// media queries
 @media (max-width: 800px) {
     header {
         form {
@@ -87,6 +93,11 @@ main {
         }
     }
 }
+@media (max-height: 500px) {
+    header {
+        position: static;
+    }
+}
 @media (max-width: 500px) {
     main {
         table {
@@ -94,7 +105,7 @@ main {
                 display: flex;
                 flex-wrap: wrap;
                 .tableWeekday {
-                    width: 50%;
+                    width: 65%;
                     margin: 0 auto;
                 }
             }

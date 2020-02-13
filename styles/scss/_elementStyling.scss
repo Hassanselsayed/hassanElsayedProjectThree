@@ -1,8 +1,6 @@
 // stripping default styles
 h1,
 h2,
-h3,
-h4,
 ul,
 p {
     margin: 0;
@@ -36,22 +34,27 @@ input[type=submit] {
     text-transform: uppercase;
 }
 input[type=submit],
-.removeItem {
-    border: none;
+.removeItem,
+.addSubtask {
     background-color: rgb(252, 240, 204);
+}
+input[type=submit],
+.removeItem,
+.addSubtask,
+.checkboxButton {
+    border: none;
 }
 select:hover,
 input[type=submit]:hover,
-button:hover,
-li p:hover {
+button:hover {
     cursor: pointer;
 }
+
 table, th, td {
-    border: 2px solid rgba(0, 0, 0, 1);
+    border: 2px solid rgb(0, 0, 0);
 }
 .checkboxButton {
     background: none;
-    border: none;
 }
 .scratchItemOff {
     text-decoration: line-through;

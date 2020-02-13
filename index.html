@@ -11,15 +11,19 @@
     
     <!-- linking the page to the font awesome kit -->
     <script src="https://kit.fontawesome.com/5356eff725.js" crossorigin="anonymous"></script>
-
+    <!-- linking the HTML to the css styles sheet -->
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
+<!-- wrapper class on the body -->
 <body class="wrapper">
+    <!-- header of the page -->
     <header>
+        <!-- form used to input to do items -->
         <form action="">
             <h1>To do list</h1>
             <label for="Weekday">Please choose a weekday</label>
+            <!-- dropdown menu -->
             <select name="Weekday" id="Weekday">
                 <option disabled selected>Weekday</option>
                 <option value="monday">Monday</option>
@@ -38,8 +42,10 @@
     </header>
 
     <main>
+        <!-- table heading -->
         <h2>weekly to do list</h2>
-        <table>
+        <!-- to do table -->
+        <table id="myTable">
             <tr>
                 <td class="tableWeekday">Monday</td>
                 <td class="weekdayItem">
@@ -98,8 +104,6 @@
             </tr>
         </table>
     </main>
-
-
 
 
 
