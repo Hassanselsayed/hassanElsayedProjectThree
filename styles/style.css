@@ -243,14 +243,14 @@ p {
   padding: 0;
 }
 
-html {
-  font-size: 125%;
-}
-
 .wrapper {
   width: 90%;
   max-width: 1280px;
   margin: 0 auto;
+}
+
+html {
+  font-size: 125%;
 }
 
 body,
@@ -271,23 +271,22 @@ input[type=submit] {
   text-transform: uppercase;
 }
 
+.scratchItemOff {
+  text-decoration: line-through;
+  color: #5d737e;
+}
+
 input[type=submit],
-.removeItem,
-.addSubtask {
+.removeItem {
   background-color: #fcf0cc;
 }
 
+input[type=text],
+select,
 input[type=submit],
 .removeItem,
-.addSubtask,
 .checkboxButton {
-  border: none;
-}
-
-select:hover,
-input[type=submit]:hover,
-button:hover {
-  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0);
 }
 
 table, th, td {
@@ -298,9 +297,29 @@ table, th, td {
   background: none;
 }
 
-.scratchItemOff {
-  text-decoration: line-through;
-  color: #5d737e;
+input[type=submit]:focus,
+.removeItem:focus,
+.checkboxButton:focus {
+  outline: none;
+}
+
+input[type=text]:hover,
+select:hover,
+.removeItem:hover,
+input[type=submit]:hover,
+.checkboxButton:hover,
+input[type=text]:focus,
+select:focus,
+.removeItem:focus,
+input[type=submit]:focus,
+.checkboxButton:focus {
+  border: 2px solid black;
+}
+
+select:hover,
+input[type=submit]:hover,
+button:hover {
+  cursor: pointer;
 }
 
 header {
@@ -326,7 +345,7 @@ header form {
 
 header form h1,
 header form input[type=submit] {
-  margin-top: 3vh;
+  margin: 1vh 0;
 }
 
 header form input[type=submit],
@@ -372,7 +391,15 @@ main table tr .tableWeekday {
   padding: 5px 0;
 }
 
+.weekdayItem ul {
+  width: 100%;
+}
+
 .weekdayItem ul li:nth-child(odd) {
+  background-color: #c866ff;
+}
+
+.weekdayItem ul li:nth-child(even) {
   background-color: #da99ff;
 }
 
@@ -389,15 +416,15 @@ main table tr .tableWeekday {
 
 .weekdayItem ul li .checkboxButton,
 .weekdayItem ul li .removeItem {
-  -ms-flex-preferred-size: calc(2.5% - (4px));
-      flex-basis: calc(2.5% - (4px));
+  -ms-flex-preferred-size: calc(2.5% - (3px));
+      flex-basis: calc(2.5% - (3px));
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
 
 .weekdayItem ul li p {
-  -ms-flex-preferred-size: calc(92.5% - 10px);
-      flex-basis: calc(92.5% - 10px);
+  -ms-flex-preferred-size: calc(95% - 10px);
+      flex-basis: calc(95% - 10px);
   margin-right: 10px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;

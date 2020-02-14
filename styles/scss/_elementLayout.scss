@@ -13,7 +13,7 @@ header {
         align-items: center;
         h1,
         input[type=submit] {
-            margin-top: 3vh;
+            margin: 1vh 0;
         }
         input[type=submit],
         input[type=text],
@@ -52,11 +52,17 @@ main {
         }
     }
 }
+
+// dynamic elements' layout
 .weekdayItem {
     width: 85%;
     padding: 5px 0;
     ul {
+        width: 100%;
         li:nth-child(odd) {
+            background-color: lighten($color: $mainBackground, $amount: 20);
+        }
+        li:nth-child(even) {
             background-color: lighten($color: $mainBackground, $amount: 30);
         }
         li {
@@ -66,11 +72,11 @@ main {
             align-items: center;
             .checkboxButton,
             .removeItem {
-                flex-basis: calc(2.5% - (4px));
+                flex-basis: calc(2.5% - (3px));
                 flex-shrink: 0;
             }
             p {
-                flex-basis: calc(92.5% - 10px);
+                flex-basis: calc(95% - 10px);
                 margin-right: 10px;
                 flex-grow: 1;
             }
@@ -80,15 +86,15 @@ main {
         }
     }
 }
+
+// footer layout
 footer {
     background-color: rgb(252, 240, 204);
     min-height: 5vh;
     padding: 5px 0;
     text-align: center;
-    p {
-
-    }
 }
+
 // media queries
 @media (max-width: 800px) {
     header {

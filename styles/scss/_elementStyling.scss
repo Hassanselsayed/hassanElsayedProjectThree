@@ -7,17 +7,17 @@ p {
     padding: 0;
 }
 
-// general styles
-html {
-    font-size: 125%;
-}
+// wrapper styles
 .wrapper {
     width: 90%;
     max-width: 1280px;
     margin: 0 auto;
 }
 
-// styling specific elements
+// fonts
+html {
+    font-size: 125%;
+}
 body,
 input[type=submit],
 select,
@@ -33,30 +33,52 @@ h2,
 input[type=submit] {
     text-transform: uppercase;
 }
-input[type=submit],
-.removeItem,
-.addSubtask {
-    background-color: rgb(252, 240, 204);
-}
-input[type=submit],
-.removeItem,
-.addSubtask,
-.checkboxButton {
-    border: none;
-}
-select:hover,
-input[type=submit]:hover,
-button:hover {
-    cursor: pointer;
+.scratchItemOff {
+    text-decoration: line-through;
+    color: rgb(93, 115, 126);
 }
 
+// buttons' backgrounds
+input[type=submit],
+.removeItem {
+    background-color: rgb(252, 240, 204);
+}
+
+// borders
+input[type=text],
+select,
+input[type=submit],
+.removeItem,
+.checkboxButton {
+    border: 2px solid rgba(255, 255, 255, 0);
+}
 table, th, td {
     border: 2px solid rgb(0, 0, 0);
 }
 .checkboxButton {
     background: none;
 }
-.scratchItemOff {
-    text-decoration: line-through;
-    color: rgb(93, 115, 126);
+
+// hover and focus
+input[type=submit]:focus,
+.removeItem:focus,
+.checkboxButton:focus {
+    outline: none;
+}
+input[type=text]:hover,
+select:hover,
+.removeItem:hover,
+input[type=submit]:hover,
+.checkboxButton:hover,
+input[type=text]:focus,
+select:focus,
+.removeItem:focus,
+input[type=submit]:focus,
+.checkboxButton:focus {
+    border: 2px solid rgb(0, 0, 0);
+}
+select:hover,
+input[type=submit]:hover,
+button:hover {
+    cursor: pointer;
 }
