@@ -1,3 +1,6 @@
+// variables
+$black: rgb(0, 0, 0);
+
 // stripping default styles
 h1,
 h2,
@@ -44,7 +47,7 @@ input[type=submit],
     background-color: rgb(252, 240, 204);
 }
 
-// borders
+// borders + hover & focus states
 input[type=text],
 select,
 input[type=submit],
@@ -52,14 +55,9 @@ input[type=submit],
 .checkboxButton {
     border: 2px solid rgba(255, 255, 255, 0);
 }
-table, th, td {
-    border: 2px solid rgb(0, 0, 0);
-}
 .checkboxButton {
     background: none;
 }
-
-// hover and focus
 input[type=submit]:focus,
 .removeItem:focus,
 .checkboxButton:focus {
@@ -74,8 +72,9 @@ input[type=text]:focus,
 select:focus,
 .removeItem:focus,
 input[type=submit]:focus,
-.checkboxButton:focus {
-    border: 2px solid rgb(0, 0, 0);
+.checkboxButton:focus,
+table, th, td {
+    border: 2px solid $black;
 }
 select:hover,
 input[type=submit]:hover,

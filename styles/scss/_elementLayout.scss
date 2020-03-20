@@ -42,17 +42,16 @@ main {
     table {
         width: 100%;
         background-color: lighten($color: $mainBackground, $amount: 10);
-        tr {
-            .tableWeekday {
-                width: 15%;
-                padding: 5px 10px;
-                font-weight: bold;
-                text-align: center;
-            }
-        }
     }
 }
-
+tr {
+    .tableWeekday {
+        width: 15%;
+        padding: 5px 10px;
+        font-weight: bold;
+        text-align: center;
+    }
+}
 // dynamic elements' layout
 .weekdayItem {
     width: 85%;
@@ -112,18 +111,15 @@ footer {
     }
 }
 @media (max-width: 500px) {
-    main {
-        table {
-            tr {
-                display: flex;
-                flex-wrap: wrap;
-                .tableWeekday {
-                    width: 65%;
-                    margin: 0 auto;
-                }
-            }
+    tr {
+        display: flex;
+        flex-wrap: wrap;
+        .tableWeekday {
+            width: 65%;
+            margin: 0 auto;
         }
     }
+
     .weekdayItem {
         width: 100%;
         margin: 5px 0;

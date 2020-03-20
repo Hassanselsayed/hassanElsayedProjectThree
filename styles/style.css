@@ -289,10 +289,6 @@ input[type=submit],
   border: 2px solid rgba(255, 255, 255, 0);
 }
 
-table, th, td {
-  border: 2px solid black;
-}
-
 .checkboxButton {
   background: none;
 }
@@ -312,7 +308,8 @@ input[type=text]:focus,
 select:focus,
 .removeItem:focus,
 input[type=submit]:focus,
-.checkboxButton:focus {
+.checkboxButton:focus,
+table, th, td {
   border: 2px solid black;
 }
 
@@ -379,7 +376,7 @@ main table {
   background-color: #b533ff;
 }
 
-main table tr .tableWeekday {
+tr .tableWeekday {
   width: 15%;
   padding: 5px 10px;
   font-weight: bold;
@@ -456,14 +453,14 @@ footer {
 }
 
 @media (max-width: 500px) {
-  main table tr {
+  tr {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  main table tr .tableWeekday {
+  tr .tableWeekday {
     width: 65%;
     margin: 0 auto;
   }
